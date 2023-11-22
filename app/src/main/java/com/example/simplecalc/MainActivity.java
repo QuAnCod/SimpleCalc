@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpOperationButtons() {
         int[] operationIds = {
-                R.id.buttonAdd, R.id.buttonSubtract, R.id.buttonMultiply, R.id.buttonDivide
+                R.id.buttonAdd, R.id.buttonSubtract, R.id.buttonMultiply, R.id.buttonDivide, R.id.buttonExponent, R.id.buttonRoot
         };
 
         View.OnClickListener operationListener = v -> {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 operation = b.getText().toString();
                 display.append(" " + operation + " ");
                 isOperationPressed = true;
-                isSecondNumberStarted = false;
+                isSecondNumberStarted = operation.equals("√") ? false : true;
             }
         };
 
@@ -98,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
                         display.setText("Error");
                         return;
                     }
+                    break;
+                case "^":
+                    result = Math.pow(firstNumber, secondNumber);
+                    break;
+                case "√":
+                    result = Math.sqrt(firstNumber);
                     break;
             }
 

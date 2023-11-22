@@ -35,6 +35,8 @@
         <Button android:id="@+id/buttonSubtract" android:text="-" />
         <Button android:id="@+id/buttonMultiply" android:text="*" />
         <Button android:id="@+id/buttonDivide" android:text="/" />
+        <Button android:id="@+id/buttonExponent" android:text="^" />
+        <Button android:id="@+id/buttonRoot" android:text="√" />
 
         <!-- Equal and Clear buttons -->
         <Button android:id="@+id/buttonEqual" android:text="=" />
